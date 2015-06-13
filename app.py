@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 def view(name):
     #TODO: create a helper to validate the view name and return an html
-    return app.send_static_file(name)
+    return app.send_static_file('views'+name)
 
 ##########################################################################
 ##########################################################################
@@ -23,6 +23,25 @@ def view(name):
 def index():
     return view('index.html')
 
+##########################################################################
+
+@app.route('/js/angular')
+def jsAngular():
+    return app.send_static_file('js/angular.min.js')    
+
+@app.route('/js/bootstrap')
+def jsBootstrap():
+    return app.send_static_file('js/bootstrap.min.js')
+
+@app.route('/js/jquery')
+def jsJQuery():
+    return app.send_static_file('js/jquery.min.js')
+
+@app.route('/css/bootstrap')
+def cssBootstrap():
+    return app.send_static_file('css/bootstrap.min.css')
+
+##########################################################################
 
 @app.route('/api/menu')
 def menu():
