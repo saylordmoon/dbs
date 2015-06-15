@@ -1,9 +1,8 @@
 from flask import Flask
 
+API_SUFFIX_V1 = "/api/v1/"
 HTML_SUFFIX = ".html"
-
 app = Flask(__name__)
-
 
 ##########################################################################
 #                              RENDER RESPOSES                           #   
@@ -11,7 +10,7 @@ app = Flask(__name__)
 
 def view(name):
     #TODO: create a helper to validate the view name and return an html
-    return app.send_static_file('views'+name)
+    return app.send_static_file(name)
 
 ##########################################################################
 ##########################################################################
@@ -26,20 +25,16 @@ def index():
 ##########################################################################
 
 @app.route('/js/angular')
-def jsAngular():
-    return app.send_static_file('js/angular.min.js')    
+def jsAngular(): return app.send_static_file('js/angular.min.js')    
 
 @app.route('/js/bootstrap')
-def jsBootstrap():
-    return app.send_static_file('js/bootstrap.min.js')
+def jsBootstrap(): return app.send_static_file('js/bootstrap.min.js')
 
 @app.route('/js/jquery')
-def jsJQuery():
-    return app.send_static_file('js/jquery.min.js')
+def jsJQuery(): return app.send_static_file('js/jquery.min.js')
 
 @app.route('/css/bootstrap')
-def cssBootstrap():
-    return app.send_static_file('css/bootstrap.min.css')
+def cssBootstrap(): return app.send_static_file('css/bootstrap.min.css')
 
 ##########################################################################
 
@@ -59,10 +54,7 @@ def logout():
 def getRegister():
     return "regiter form"
 
-
 ##########################################################################
-
-
 ##########################################################################
 #                              SERVICE                                   #   
 ##########################################################################
@@ -72,4 +64,3 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0')
 
 ##########################################################################
-

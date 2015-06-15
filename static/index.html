@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html ng-module>
+<html ng-app>
 	<header>
-		<title>{{title}}</title>
+		<meta charset="utf-8" />
+		<title>{{"title"}}</title>
+		<link rel="stylesheet" href="/css/bootstrap" type="text/css" media="screen" charset="utf-8" />
 	<header>	
 	<body>
+		<h1 id="heading">heading</h1>
 		<ng-view></ng-view>
 	</body>
+	<script type="text/javascript" src="js/jquery"></script>
+	<script type="text/javascript" src="js/angular"></script>
+	<script type="text/javascript" src="js/bootstrap"></script>
 </html>
